@@ -1,0 +1,25 @@
+const prompt = require("prompt-sync")();
+
+let orderValue = parseFloat(prompt("Enter the total order value:"));
+let Shipping_cost;
+
+if(orderValue<50)
+{
+    Shipping_cost = 5;
+    let value = orderValue + Shipping_cost;
+    console.log("the order value is: "+ value);
+}
+
+else if (orderValue >=50 && orderValue <=100)
+{
+    Shipping_cost = 10;
+    let value = orderValue + Shipping_cost;
+    console.log("the order value is: "+ value);
+}
+
+else
+{
+     Shipping_cost = 0;
+     let value = orderValue + Shipping_cost;
+    console.log("the order value is: "+ value);
+}
