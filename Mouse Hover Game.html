@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On Mouse Hover</title>
+
+    <style>
+
+        #hoverText{
+            font-size: 30px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+<body>
+
+    <p id="hoverText">hover over me</p>
+
+    <script>
+
+        let  hoverElement =document.getElementById("hoverText");
+
+        let originalColor="black";
+
+        function changeColor()
+
+        {
+            hoverElement.style.color="red";
+        }
+
+        function revertColor()
+
+        {
+            hoverElement.style.color=originalColor;
+        }
+
+        hoverElement.onmouseover=changeColor;
+
+        hoverElement.onmouseout=revertColor;
+
+    </script>
+
+</body>
+</html>
