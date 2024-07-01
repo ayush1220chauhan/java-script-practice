@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onload Event Example</title>
+
+    <style>
+
+        #content {
+            font-size: 20px;
+            margin-top: 25px;
+            color: rosybrown;
+            font-size: larger;
+        }
+
+        h1 {
+            color: rgb(216, 226, 228);
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <h1>Welcome to my page!</h1>
+
+    <div id="content"></div>
+
+    <script>
+
+        // Function to be executed when the page loads
+
+        function onPageLoad() 
+        {
+            // Get the current date and time
+
+            let now = new Date();
+
+            let dateTimeString = now.toLocaleString();
+
+            // Get the content div
+
+            let contentDiv = document.getElementById('content');
+
+            // Update the content
+
+            contentDiv.innerHTML = `
+
+                <p>This page finished loading on: ${dateTimeString}</p>
+
+                <p>The page has been loaded for: <span id="timeElapsed">0</span> seconds.</p>
+            `;
+
+            // Start a timer to update the elapsed time
+
+            setInterval(updateElapsedTime, 1000);
+        }
+
+        // Function to update the elapsed time
+
+        function updateElapsedTime() 
+        {
+            let timeElapsedSpan = document.getElementById('timeElapsed');
+
+            let currentTime = parseInt(timeElapsedSpan.textContent);
+
+            timeElapsedSpan.textContent = currentTime + 1;
+        }
+
+        // Attach the onPageLoad function to the window's onload event
+
+        window.onload = onPageLoad;
+        
+    </script>
+
+</body>
+</html>
